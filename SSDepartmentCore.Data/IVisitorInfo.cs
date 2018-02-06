@@ -13,7 +13,8 @@ namespace SSDepartmentCore.Data
         string GetContactNumber(int id);
         string GetEmail(int id);
         IEnumerable<Visitor> GetVisitRange(DateTime startDate, DateTime endDate);
-        IEnumerable<Visitor> UserEmails();
+        IEnumerable<string> UserEmails();
+       
 
     }
 }

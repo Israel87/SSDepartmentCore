@@ -24,6 +24,11 @@ namespace SSDepartmentCore.Services
             _dataContext.SaveChanges();
         }
 
+        public IList<Visitor> EmailAddress()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Visitor> GetAll()
         {
             return _dataContext.Visitors;
@@ -51,12 +56,15 @@ namespace SSDepartmentCore.Services
 
         public IEnumerable<Visitor> GetVisitRange(DateTime startDate, DateTime endDate)
         {
-            throw new NotImplementedException();
+            return _dataContext.Visitors
+                .Where(A => A.DateVisited >= startDate && A.DateVisited <= endDate);
+            //return GetAll().Where(dv => dv.DateVisited >= startDate && dv.DateVisited <= endDate);
         }
 
-        public IEnumerable<Visitor> UserEmails()
+        public IEnumerable<string> UserEmails()
         {
-            throw new NotImplementedException();
+          return _dataContext.Visitors.Select(dv => dv.EmailAddress);
+            
         }
     }
 }
