@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SSDepartmentCore.LibraryData\SSDepartmentCore.Data.csproj" />
+    <ProjectReference Include="..\SSDepartmentCore.Data\SSDepartmentCore.Data.csproj" />
+    <ProjectReference Include="..\SSDepartmentCore.Services\SSDepartmentCore.Services.csproj" />
   </ItemGroup>
 
 </Project>

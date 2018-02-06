@@ -11,7 +11,9 @@ namespace SSDepartmentCore.Data
         Visitor GetById(int id);
         void Add(Visitor newVisitor);
         string GetContactNumber(int id);
+        string GetEmail(int id);
         IEnumerable<Visitor> GetVisitRange(DateTime startDate, DateTime endDate);
+        IEnumerable<Visitor> UserEmails();
 
     }
 }

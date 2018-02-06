@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SSDepartmentCore.Data;
+using SSDepartmentCore.Services;
 
 namespace Library
 {
@@ -26,8 +27,9 @@ namespace Library
             // Added framework services.
             services.AddMvc();
             // Adding the Database service
-            services.AddDbContext<DataContext>(options 
-                => options.UseSqlServer(Configuration.GetConnectionString("SSDeptConnection")));
+            services.AddSingleton(Configuration);
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SSDeptConnection")));
+            services.AddScoped<IVisitorInfo, VisitorService>();
 
         }
 

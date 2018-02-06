@@ -39,10 +39,22 @@ namespace SSDepartmentCore.Services
         public string GetContactNumber(int id)
         {
            return _dataContext.Visitors
-                .FirstOrDefault(dv => dv.User.Id == id);
+                .FirstOrDefault(dv => dv.Id == id)?.ContactNumber;
         }
 
+        public string GetEmail(int id)
+        {
+            return _dataContext.Visitors.
+                FirstOrDefault(dv => dv.Id == id)?.EmailAddress;
+        }
+
+
         public IEnumerable<Visitor> GetVisitRange(DateTime startDate, DateTime endDate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Visitor> UserEmails()
         {
             throw new NotImplementedException();
         }
