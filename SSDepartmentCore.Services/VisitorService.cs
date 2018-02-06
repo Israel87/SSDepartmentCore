@@ -38,7 +38,8 @@ namespace SSDepartmentCore.Services
 
         public string GetContactNumber(int id)
         {
-            throw new NotImplementedException();
+           return _dataContext.Visitors
+                .FirstOrDefault(dv => dv.User.Id == id);
         }
 
         public IEnumerable<Visitor> GetVisitRange(DateTime startDate, DateTime endDate)
