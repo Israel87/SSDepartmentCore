@@ -14,7 +14,9 @@ namespace SSDepartmentCore.Data
         string GetEmail(int id);
         IEnumerable<Visitor> GetVisitRange(DateTime startDate, DateTime endDate);
         IEnumerable<string> UserEmails();
-       
+        IEnumerable<string> ContactNumbers();
+        void Update(Visitor updateVisitor);
+        void Delete(Visitor deleteVisitor);
 
     }
 }

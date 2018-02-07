@@ -8,7 +8,6 @@ namespace SSDepartmentCore.Services
 {
     public class VisitorService : IVisitorInfo
     {
-
         // initiate the Database interactions here. 
         private DataContext _dataContext;
 
@@ -24,9 +23,9 @@ namespace SSDepartmentCore.Services
             _dataContext.SaveChanges();
         }
 
-        public IList<Visitor> EmailAddress()
+        public IEnumerable<string> ContactNumbers()
         {
-            throw new NotImplementedException();
+            return _dataContext.Visitors.Select(dv => dv.ContactNumber);
         }
 
         public IEnumerable<Visitor> GetAll()
@@ -49,8 +48,9 @@ namespace SSDepartmentCore.Services
 
         public string GetEmail(int id)
         {
-            return _dataContext.Visitors.
+           return _dataContext.Visitors.
                 FirstOrDefault(dv => dv.Id == id)?.EmailAddress;
+            
         }
 
 
@@ -61,10 +61,43 @@ namespace SSDepartmentCore.Services
             //return GetAll().Where(dv => dv.DateVisited >= startDate && dv.DateVisited <= endDate);
         }
 
+        public void Update(Visitor updateVisitor)
+        {
+            var update = _dataContext.Visitors.
+                FirstOrDefault(dv => dv.Id == updateVisitor.Id);
+
+            update.NeedCounselling = updateVisitor.NeedCounselling;
+            update.PrayerRequest = updateVisitor.PrayerRequest;
+            update.SeePastor = updateVisitor.SeePastor;
+            update.Surname = updateVisitor.Surname;
+            update.FirstName = updateVisitor.FirstName;
+            update.ContactNumber = updateVisitor.ContactNumber;
+            update.EmailAddress = updateVisitor.EmailAddress;
+            update.Adventist = updateVisitor.Adventist;
+            update.Address = updateVisitor.Address;
+            update.Church = update.Church;
+            update.DateVisited = updateVisitor.DateVisited;
+           
+            
+          //_dataContext.Update(update);
+            _dataContext.SaveChanges();
+        }
+
         public IEnumerable<string> UserEmails()
         {
-          return _dataContext.Visitors.Select(dv => dv.EmailAddress);
+            return _dataContext.Visitors.Select(dv => dv.EmailAddress);
             
         }
+
+        public void Delete(Visitor deleteVisitor)
+        {
+            var deleted = _dataContext.Visitors
+                .FirstOrDefault(dv => dv.Id == deleteVisitor.Id);
+
+            _dataContext.Entry(deleted).State = Microsoft
+                .EntityFrameworkCore.EntityState.Deleted;
+        }
+
+
     }
 }
