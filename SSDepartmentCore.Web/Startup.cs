@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SSDepartmentCore.Data;
 using SSDepartmentCore.Services;
+using SSDepartmentCore.Services.Visitors;
 
 namespace Library
 {

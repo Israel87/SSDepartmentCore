@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SSDepartmentCore.Data.EntityModels;
+using SSDepartmentCore.Data.EntityModels.Visitors;
 
 namespace SSDepartmentCore.Data
 {

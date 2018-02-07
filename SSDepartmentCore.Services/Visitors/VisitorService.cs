@@ -1,10 +1,11 @@
 ﻿using SSDepartmentCore.Data;
 using SSDepartmentCore.Data.EntityModels;
+using SSDepartmentCore.Data.EntityModels.Visitors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SSDepartmentCore.Services
+namespace SSDepartmentCore.Services.Visitors
 {
     public class VisitorService : IVisitorInfo
     {
@@ -98,6 +99,34 @@ namespace SSDepartmentCore.Services
                 .EntityFrameworkCore.EntityState.Deleted;
         }
 
+        //IEnumerable<Visitor> IVisitorInfo.GetAll()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
+        //Visitor IVisitorInfo.GetById(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void Add(Visitor newVisitor)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //IEnumerable<Visitor> IVisitorInfo.GetVisitRange(DateTime startDate, DateTime endDate)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void Update(Visitor updateVisitor)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void Delete(Visitor deleteVisitor)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -8,4 +8,9 @@
     <ProjectReference Include="..\SSDepartmentCore.Data\SSDepartmentCore.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Books\" />
+    <Folder Include="Users\" />
+  </ItemGroup>
+
 </Project>

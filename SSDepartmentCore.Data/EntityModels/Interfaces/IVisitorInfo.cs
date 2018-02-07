@@ -1,4 +1,5 @@
 ﻿using SSDepartmentCore.Data.EntityModels;
+using SSDepartmentCore.Data.EntityModels.Visitors;
 using System;
 using System.Collections.Generic;
 using System.Text;
